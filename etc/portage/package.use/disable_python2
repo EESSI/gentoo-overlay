@@ -1,0 +1,2 @@
+*/* PYTHON_TARGETS: -python2_7 python3_8
+*/* PYTHON_SINGLE_TARGET: -* python3_8
