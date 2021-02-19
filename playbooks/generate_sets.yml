@@ -28,7 +28,7 @@
   tasks:
     - template:
         src: set.j2
-        dest: "etc/portage/sets/{{ item.0.name }}-{{ item.1 }}.txt"
+        dest: "../etc/portage/sets/{{ item.0.name }}-{{ item.1 }}.txt"
       with_nested:
         - "{{ eessi_sets }}"
         - "{{ eessi_archs }}"
