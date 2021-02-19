@@ -1,0 +1,7 @@
+{% for p in item.0.packages %}
+{% if p.exclude_on_archs is not defined or (p.exclude_on_archs is defined and not item.1 in p.exclude_on_archs) %}
+{% if p.only_on_arch is not defined or (p.only_on_arch is defined and item.1 in p.only_on_arch) %}
+{{ p.name }}
+{% endif %}
+{% endif %}
+{% endfor %}
