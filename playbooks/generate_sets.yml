@@ -7,15 +7,6 @@
       - x86_64
 
     eessi_sets:
-      - name: eessi-2020.12
-        packages:
-          - name: a
-          - name: b
-            exclude_on_archs:
-              - aarch64
-              - ppc64le
-          - name: c
-
       - name: eessi-2021.02
         packages:
           - name: d
@@ -28,7 +19,7 @@
   tasks:
     - template:
         src: set.j2
-        dest: "{{ lookup('env', 'GITHUB_WORKSPACE') | default('/tmp', True) }}/etc/portage/sets/{{ item.0.name }}-{{ item.1 }}.txt"
+        dest: "{{ lookup('env', 'GITHUB_WORKSPACE') | default('/tmp', True) }}/etc/portage/sets/{{ item.0.name }}-{{ item.1 }}"
       with_nested:
         - "{{ eessi_sets }}"
         - "{{ eessi_archs }}"
