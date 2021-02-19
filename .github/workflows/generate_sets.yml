@@ -16,10 +16,24 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
-    - name: ansible check with centos:centos8
+    - name: Run playbook that generates the package set files
       # replace "master" with any valid ref
       uses: roles-ansible/check-ansible-centos-centos8-action@master
       with:
         targets: "playbooks/generate_sets.yml"
         hosts: "localhost"
+
+    - name: Commit added/modified package set files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -m "Add generated set files" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
