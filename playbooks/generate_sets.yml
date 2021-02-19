@@ -1,5 +1,5 @@
 - name: Generate package sets
-  hosts: all
+  hosts: localhost
   vars:
     eessi_archs:
       - aarch64
