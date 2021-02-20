@@ -20,10 +20,12 @@ jobs:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
-    - name: Run playbook that generates the package set files
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+
+    - name: Run script that generates the package set files
       run: |
         pip install PyYAML
         python scripts/generate_set_files.py -y scripts/sets.yaml -d ${{ github.workspace }}/etc/portage/sets
