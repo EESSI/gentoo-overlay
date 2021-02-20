@@ -21,11 +21,12 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
     - name: Run playbook that generates the package set files
-      # replace "master" with any valid ref
-      uses: roles-ansible/check-ansible-centos-centos8-action@master
+    - uses: actions/setup-python@v2
       with:
-        targets: "playbooks/generate_sets.yml"
-        hosts: "localhost"
+        python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+    - run: |
+        pip install PyYAML
+        python scripts/generate_set_files.py -y scripts/sets.yaml -d ${{ github.workspace }}/etc/portage/sets
 
     - name: Commit added/modified package set files
       run: |
