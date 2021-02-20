@@ -1,0 +1,23 @@
+eessi_archs:
+  - aarch64
+  - ppc64le
+  - x86_64
+
+eessi_sets:
+  - name: eessi-2020.12
+    packages:
+      - name: a
+      - name: b
+        exclude_on_archs:
+          - aarch64
+          - ppc64le
+      - name: c
+
+  - name: eessi-2021.02
+    packages:
+      - name: d
+        only_on_arch: ppc64le
+      - name: e
+        exclude_on_archs:
+          - x86_64
+      - name: f
