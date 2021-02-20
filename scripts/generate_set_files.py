@@ -64,13 +64,13 @@ def main():
     archs, sets = parse_yaml_file(args.yamlfile)
 
     # Create a set file with the supported packages for every listed architecture and set definition
-    for arch in archs:
-       for set in sets:
-           supported_packages = [package['name'] + '\n' for package in set['packages'] if is_supported(package, arch)]
-           set_filename = os.path.join(args.setsdir, f"{set['name']}-{arch}")
-           with open(set_filename, 'w') as setfile:
-               setfile.writelines(supported_packages)
-           print(f"Created set file {set_filename}")
+    for set in sets:
+        for arch in archs:
+            supported_packages = [package['name'] + '\n' for package in set['packages'] if is_supported(package, arch)]
+            set_filename = os.path.join(args.setsdir, f"{set['name']}-{arch}")
+            with open(set_filename, 'w') as setfile:
+                setfile.writelines(supported_packages)
+            print(f"Created set file {set_filename}")
 
 
 if __name__ == '__main__':
