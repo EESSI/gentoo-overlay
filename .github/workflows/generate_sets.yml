@@ -21,10 +21,10 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
     - name: Run playbook that generates the package set files
-    - uses: actions/setup-python@v2
+      uses: actions/setup-python@v2
       with:
         python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-    - run: |
+      run: |
         pip install PyYAML
         python scripts/generate_set_files.py -y scripts/sets.yaml -d ${{ github.workspace }}/etc/portage/sets
 
