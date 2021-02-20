@@ -9,9 +9,19 @@ import yaml
 import os
 import sys
 
+
+def error(msg):
+    """
+    Print an error message and exit.
+    """
+    sys.stderr.write('ERROR: ' + msg + '\n')
+    sys.exit(1)
+
+
 def is_supported(package, arch):
     """
-    Return if a given package is supported on the given architecture.
+    Check if a given package is supported on the given architecture.
+
     package: dict having at least a 'name' key, optionally 'exclude_on_archs' (list) and 'only_on_arch' (str)
     arch: str representing an architecture name
     """
@@ -40,8 +50,7 @@ def parse_yaml_file(filename):
     sets = []
 
     if not os.path.exists(filename):
-        sys.stderr.write(f"Input file {filename} does not exist!\n")
-        sys.exit(1)
+        error(f"input file {filename} does not exist!")
 
     with open(filename, 'r') as stream:
         try:
@@ -49,9 +58,7 @@ def parse_yaml_file(filename):
             archs = y['eessi_archs']
             sets = y['eessi_sets']
         except yaml.YAMLError as exc:
-            sys.stderr.write("Error while parsing the given YAML file:\n")
-            sys.stderr.write(str(exc) + '\n')
-            sys.exit(1)
+            error("YAML file could not be parsed.\n" + str(exc))
 
     return (archs, sets)
 
