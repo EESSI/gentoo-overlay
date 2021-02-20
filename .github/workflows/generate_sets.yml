@@ -28,7 +28,7 @@ jobs:
     - name: Run script that generates the package set files
       run: |
         pip install PyYAML
-        python  ${{ github.workspace }}/scripts/generate_set_files.py -y scripts/sets.yaml -d ${{ github.workspace }}/etc/portage/sets
+        python  scripts/generate_set_files.py -y scripts/sets.yml -d etc/portage/sets
 
     - name: Commit added/modified package set files
       run: |
