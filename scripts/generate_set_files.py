@@ -4,6 +4,7 @@
 #
 import argparse
 import yaml
+import os
 import sys
 
 def is_supported(package, arch):
@@ -35,6 +36,10 @@ def parse_yaml_file(filename):
     """
     archs = []
     sets = []
+
+    if not os.path.exists(filename):
+        sys.stderr.write(f"Input file {filename} does not exist!\n")
+        sys.exit(1)
 
     with open(filename, 'r') as stream:
         try:
