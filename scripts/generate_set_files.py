@@ -2,6 +2,8 @@
 #
 # Generate Gentoo package set files based on an YAML input file.
 #
+# TODO: add linux/macos
+#
 import argparse
 import yaml
 import os
@@ -65,8 +67,10 @@ def main():
     for arch in archs:
        for set in sets:
            supported_packages = [package['name'] + '\n' for package in set['packages'] if is_supported(package, arch)]
-           with open(f"{args.setsdir}/{set['name']}-{arch}", 'w') as setfile:
+           set_filename = os.path.join(args.setsdir, f"{set['name']}-{arch}")
+           with open(set_filename, 'w') as setfile:
                setfile.writelines(supported_packages)
+           print(f"Created set file {set_filename}")
 
 
 if __name__ == '__main__':
