@@ -70,6 +70,9 @@ def main():
     args = parse_args()
     archs, sets = parse_yaml_file(args.yamlfile)
 
+    if not os.path.exists(args.setsdir):
+        error(f"output directory {args.setsdir} does not exist.")
+
     # Create a set file with the supported packages for every listed architecture and set definition
     for set in sets:
         for arch in archs:
@@ -77,7 +80,7 @@ def main():
             set_filename = os.path.join(args.setsdir, f"{set['name']}-{arch}")
             with open(set_filename, 'w') as setfile:
                 setfile.writelines(supported_packages)
-            print(f"Created set file {set_filename}")
+            print(f"Created set file {set_filename}.")
 
 
 if __name__ == '__main__':
