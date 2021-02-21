@@ -10,7 +10,7 @@ eessi_sets:
     packages:
       - name: a
       - name: b
-        exclude_on_archs:
+        exclude_on:
           - aarch64
           - ppc64le
       - name: c
@@ -18,8 +18,8 @@ eessi_sets:
   - name: eessi-2021.02
     packages:
       - name: d
-        only_on_arch: ppc64le
+        include_on: ppc64le
       - name: e
-        exclude_on_archs:
+        exclude_on:
           - x86_64
       - name: f

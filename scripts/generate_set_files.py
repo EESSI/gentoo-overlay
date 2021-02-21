@@ -20,11 +20,11 @@ def is_supported(package, arch):
     """
     Check if a given package is supported on the given architecture.
 
-    package: dict having at least a 'name' key, optionally 'exclude_on_archs' (list) and 'only_on_arch' (str)
+    package: dict having at least a 'name' key, optionally 'exclude_on' (list) and 'include_on' (str)
     arch: str representing an architecture name
     """
-    return not arch in package.get('exclude_on_archs', []) \
-        and arch in package.get('only_on_arch', [arch])
+    return not arch in package.get('exclude_on', []) \
+        and arch in package.get('include_on', [arch])
 
 
 def parse_args():
