@@ -1,7 +1,9 @@
 eessi_archs:
-  - aarch64
-  - ppc64le
-  - x86_64
+  - linux-aarch64
+  - linux-ppc64le
+  - linux-x86_64
+#  - macos-aarch64
+#  - macos-x86_64
 
 eessi_sets:
   - name: eessi-2020.12

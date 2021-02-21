@@ -2,8 +2,6 @@
 #
 # Generate Gentoo package set files based on an YAML input file.
 #
-# TODO: add linux/macos
-#
 import argparse
 import yaml
 import os
