@@ -5,8 +5,14 @@ name: Generate Gentoo package sets
 on:
   push:
     branches: [ main, generate_sets ]
+    paths:
+      - scripts/generate_set_files.py
+      - scripts/eessi_sets.yml
   pull_request:
     branches: [ main, generate_sets ]
+    paths:
+      - scripts/generate_set_files.py
+      - scripts/eessi_sets.yml
 
 jobs:
   generate_sets:
