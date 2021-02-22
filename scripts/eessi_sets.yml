@@ -6,20 +6,28 @@ eessi_archs:
 #  - macos-x86_64
 
 eessi_sets:
-  - name: eessi-2020.12
-    packages:
-      - name: a
-      - name: b
-        exclude_on:
-          - aarch64
-          - ppc64le
-      - name: c
-
   - name: eessi-2021.02
     packages:
-      - name: d
-        include_on: ppc64le
-      - name: e
+      - name: app-editors/emacs
+      - name: app-editors/vim
+      - name: dev-python/pip
+      - name: dev-python/GitPython
+      - name: dev-python/keyring
+      - name: dev-python/pycodestyle
+      - name: dev-util/pkgconfig
+      - name: media-fonts/dejavu
+      - name: media-fonts/liberation-fonts
+      - name: =sys-apps/archspec-0.1.2::eessi
+      - name: sys-apps/dbus
+      - name: sys-cluster/lmod
+      - name: =sys-cluster/rdma-core-33.1::eessi
+        exclude_on: 
+          - macos-aarch64
+          - macos-x86_64
+      - name: =sys-fabric/opa-psm2-11.2.185::eessi
+        include_on: 
+          - linux-x86_64
+      - name: sys-libs/pam
         exclude_on:
-          - x86_64
-      - name: f
+          - macos-aarch64
+          - macos-x86_64
