@@ -37,6 +37,7 @@ jobs:
         python  scripts/generate_set_files.py -y scripts/eessi_sets.yml -d etc/portage/sets
 
     - name: Commit added/modified package set files
+      if: ${{ github.event_name == 'pull_request' }}
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
