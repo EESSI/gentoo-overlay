@@ -1,11 +1,21 @@
 name: YAML lint
-on: [push]
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - scripts/eessi_sets.yml
+  pull_request:
+    branches: [ main ]
+    paths:
+      - scripts/eessi_sets.yml
+
 jobs:
-  lint:
+  yaml_lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: yaml-lint
+    - name: yamllint
       uses: ibiqlik/action-yamllint@v3
       with:
         file_or_dir: scripts/eessi_sets.yml
