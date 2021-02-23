@@ -61,6 +61,22 @@ def parse_yaml_file(filename):
     return (archs, sets)
 
 
+def package_atom(package):
+    """
+    Generate a package atom that is compatible with ebuild/emerge, see:
+    https://dev.gentoo.org/~zmedico/portage/doc/man/ebuild.5.html
+    """
+    atom = package['name']
+
+    if 'version' in package:
+        atom = '=' + atom + '-' + str(package['version'])
+
+    if 'overlay' in package:
+        atom += '::' + package['overlay']
+
+    return atom
+
+
 def main():
     """
     Main function.
@@ -74,7 +90,7 @@ def main():
     # Create a set file with the supported packages for every listed architecture and set definition
     for set in sets:
         for arch in archs:
-            supported_packages = [package['name'] + '\n' for package in set['packages'] if is_supported(package, arch)]
+            supported_packages = [package_atom(package) + '\n' for package in set['packages'] if is_supported(package, arch)]
             set_filename = os.path.join(args.setsdir, f"{set['name']}-{arch}")
             with open(set_filename, 'w') as setfile:
                 setfile.writelines(supported_packages)
