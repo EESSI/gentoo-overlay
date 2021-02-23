@@ -27,6 +27,7 @@ eessi_sets:
       - name: =sys-fabric/opa-psm2-11.2.185::eessi
         include_on: 
           - linux-x86_64
+      - name: sys-libs/glibc
       - name: =sys-libs/pam-1.5.1::eessi
         exclude_on:
           - macos-aarch64
