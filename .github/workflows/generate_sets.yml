@@ -37,15 +37,18 @@ jobs:
         python  scripts/generate_set_files.py -y scripts/eessi_sets.yml -d etc/portage/sets
 
     - name: Commit added/modified package set files
+      if: ${{ github.event_name != 'pull_request' }}
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add etc/portage/sets/*
         git commit -m "Add generated set files" -a || echo "No changes to commit"
 
-    - name: Push changes
+    - name: Create Pull Request
       if: ${{ github.event_name != 'pull_request' }}
-      uses: ad-m/github-push-action@master
+      uses: peter-evans/create-pull-request@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+        branch: update_set_files
+        delete-branch: true
+        title: 'Update automatically generated set files'
+        label: sets
