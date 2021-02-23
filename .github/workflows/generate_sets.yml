@@ -51,4 +51,4 @@ jobs:
         branch: update_set_files
         delete-branch: true
         title: 'Update automatically generated set files'
-        label: sets
+        labels: sets
