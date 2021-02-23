@@ -42,7 +42,9 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add etc/portage/sets/*
         git commit -m "Add generated set files" -a || echo "No changes to commit"
+
     - name: Push changes
+      if: ${{ github.event_name == 'pull_request' }}
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
