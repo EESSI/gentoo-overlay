@@ -1,3 +1,4 @@
+---
 eessi_archs:
   - linux-aarch64
   - linux-ppc64le
@@ -36,6 +37,11 @@ eessi_sets:
       - name: sys-libs/pam
         version: 1.5.1
         overlay: eessi
+      - name: sys-libs/glibc
+        exclude_on:
+          - macos-aarch64
+          - macos-x86_64
+      - name: =sys-libs/pam-1.5.1::eessi
         exclude_on:
           - macos-aarch64
           - macos-x86_64
