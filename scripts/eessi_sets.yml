@@ -22,14 +22,14 @@ eessi_sets:
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
       - name: =sys-cluster/rdma-core-33.1::eessi
-        exclude_on: 
+        exclude_on:
           - macos-aarch64
           - macos-x86_64
       - name: =sys-fabric/opa-psm2-11.2.185::eessi
-        include_on: 
+        include_on:
           - linux-x86_64
       - name: sys-libs/glibc
-        exclude_on: 
+        exclude_on:
           - macos-aarch64
           - macos-x86_64
       - name: =sys-libs/pam-1.5.1::eessi
