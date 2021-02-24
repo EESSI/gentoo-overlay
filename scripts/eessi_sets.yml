@@ -18,16 +18,25 @@ eessi_sets:
       - name: dev-util/pkgconfig
       - name: media-fonts/dejavu
       - name: media-fonts/liberation-fonts
-      - name: =sys-apps/archspec-0.1.2::eessi
+      - name: sys-apps/archspec
+        version: 0.1.2
+        overlay: eessi
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
-      - name: =sys-cluster/rdma-core-33.1::eessi
+      - name: sys-cluster/rdma-core
+        version: 33.1
+        overlay: eessi
         exclude_on:
           - macos-aarch64
           - macos-x86_64
-      - name: =sys-fabric/opa-psm2-11.2.185::eessi
+      - name: sys-fabric/opa-psm2
+        version: 11.2.185
+        overlay: eessi
         include_on:
           - linux-x86_64
+      - name: sys-libs/pam
+        version: 1.5.1
+        overlay: eessi
       - name: sys-libs/glibc
         exclude_on:
           - macos-aarch64
