@@ -12,5 +12,6 @@ sys-apps/dbus
 sys-cluster/lmod
 =sys-cluster/rdma-core-33.1::eessi
 =sys-fabric/opa-psm2-11.2.185::eessi
+=sys-libs/pam-1.5.1::eessi
 sys-libs/glibc
 =sys-libs/pam-1.5.1::eessi
