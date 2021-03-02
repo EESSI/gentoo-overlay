@@ -34,10 +34,6 @@ eessi_sets:
         overlay: eessi
         include_on:
           - linux-x86_64
-      - name: sys-libs/glibc
-        exclude_on:
-          - macos-aarch64
-          - macos-x86_64
       - name: sys-libs/pam
         version: 1.5.1
         overlay: eessi
