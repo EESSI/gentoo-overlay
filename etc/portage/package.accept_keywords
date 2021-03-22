@@ -1,2 +1,5 @@
 media-fonts/dejavu ~x86-macos
 media-fonts/liberation-fonts ~amd64-linux
+sys-cluster/lmod ~amd64
+dev-lua/luaposix ~amd64
+dev-lua/lua-bit32 amd64
