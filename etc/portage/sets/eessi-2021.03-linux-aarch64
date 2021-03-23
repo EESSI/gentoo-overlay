@@ -1,0 +1,14 @@
+app-editors/emacs
+app-editors/vim
+dev-python/pip
+dev-python/GitPython
+dev-python/keyring
+dev-python/pycodestyle
+dev-util/pkgconfig
+media-fonts/dejavu
+media-fonts/liberation-fonts
+=sys-apps/archspec-0.1.2::eessi
+sys-apps/dbus
+sys-cluster/lmod
+=sys-cluster/rdma-core-34.0::eessi
+=sys-libs/pam-1.5.1::eessi
