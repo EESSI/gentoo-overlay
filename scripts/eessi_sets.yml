@@ -7,7 +7,7 @@ eessi_archs:
 #  - macos-x86_64
 
 eessi_sets:
-  - name: eessi-2021.02
+  - name: eessi-2021.03
     packages:
       - name: app-editors/emacs
       - name: app-editors/vim
@@ -24,7 +24,7 @@ eessi_sets:
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
       - name: sys-cluster/rdma-core
-        version: 33.1
+        version: 34.0
         overlay: eessi
         exclude_on:
           - macos-aarch64
