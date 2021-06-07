@@ -284,6 +284,7 @@ _lua_export() {
 				local val
 
 				val=$($(tc-getPKG_CONFIG) --variable includedir ${impl}) || die
+				val="${val#${ESYSROOT#${SYSROOT}}}"
 
 				export LUA_INCLUDE_DIR=${val}
 				debug-print "${FUNCNAME}: LUA_INCLUDE_DIR = ${LUA_INCLUDE_DIR}"
