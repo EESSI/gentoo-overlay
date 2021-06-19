@@ -12,5 +12,6 @@ media-fonts/liberation-fonts
 sys-apps/dbus
 sys-cluster/lmod
 =sys-cluster/rdma-core-34.1::eessi
+sys-cluster/reframe
 =sys-fabric/opa-psm2-11.2.185::eessi
 =sys-libs/pam-1.5.1::eessi
