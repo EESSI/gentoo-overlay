@@ -1,10 +1,11 @@
 app-editors/emacs
 app-editors/vim
-dev-python/pip
 dev-python/GitPython
 dev-python/keyring
+dev-python/pip
 dev-python/pycodestyle
 dev-python/pyyaml
+dev-util/patchelf
 dev-util/pkgconfig
 media-fonts/dejavu
 media-fonts/liberation-fonts
