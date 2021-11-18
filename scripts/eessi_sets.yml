@@ -11,6 +11,7 @@ eessi_sets:
     packages:
       - name: app-editors/emacs
       - name: app-editors/vim
+      - name: app-shells/bash-completion
       - name: dev-python/GitPython
       - name: dev-python/keyring
       - name: dev-python/pip
