@@ -7,38 +7,40 @@ eessi_archs:
 #  - macos-x86_64
 
 eessi_sets:
-  - name: eessi-2021.06
+  - name: eessi-2021.12
     packages:
       - name: app-editors/emacs
       - name: app-editors/vim
+      - name: app-shells/bash-completion
       - name: dev-python/GitPython
       - name: dev-python/keyring
       - name: dev-python/pip
       - name: dev-python/pycodestyle
       - name: dev-python/pyyaml
+      - name: dev-python/rich
       - name: dev-util/patchelf
       - name: dev-util/pkgconfig
       - name: media-fonts/dejavu
       - name: media-fonts/liberation-fonts
       - name: sys-apps/archspec
-        version: 0.1.2
+        version: 0.1.3
         overlay: eessi
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
       - name: sys-cluster/rdma-core
-        version: 34.1
-        overlay: eessi
         exclude_on:
           - macos-aarch64
           - macos-x86_64
       - name: sys-cluster/reframe
+        overlay: eessi
+        version: 3.9.1
       - name: sys-fabric/opa-psm2
-        version: 11.2.185
+        version: 11.2.205
         overlay: eessi
         include_on:
           - linux-x86_64
       - name: sys-libs/pam
-        version: 1.5.1
+        version: 1.5.2
         overlay: eessi
         exclude_on:
           - macos-aarch64
