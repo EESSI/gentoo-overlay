@@ -32,7 +32,7 @@ eessi_sets:
           - macos-x86_64
       - name: sys-cluster/reframe
       - name: sys-fabric/opa-psm2
-        version: 11.2.185
+        version: 11.2.205
         overlay: eessi
         include_on:
           - linux-x86_64
