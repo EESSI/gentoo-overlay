@@ -26,8 +26,6 @@ eessi_sets:
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
       - name: sys-cluster/rdma-core
-        version: 34.1
-        overlay: eessi
         exclude_on:
           - macos-aarch64
           - macos-x86_64
