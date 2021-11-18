@@ -17,6 +17,7 @@ eessi_sets:
       - name: dev-python/pip
       - name: dev-python/pycodestyle
       - name: dev-python/pyyaml
+      - name: dev-python/rich
       - name: dev-util/patchelf
       - name: dev-util/pkgconfig
       - name: media-fonts/dejavu
