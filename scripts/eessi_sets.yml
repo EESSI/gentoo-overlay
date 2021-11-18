@@ -21,7 +21,7 @@ eessi_sets:
       - name: media-fonts/dejavu
       - name: media-fonts/liberation-fonts
       - name: sys-apps/archspec
-        version: 0.1.2
+        version: 0.1.3
         overlay: eessi
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
