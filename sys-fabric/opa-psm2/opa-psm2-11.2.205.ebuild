@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -6,15 +6,16 @@ EAPI=7
 inherit udev
 
 DESCRIPTION="OpenIB userspace driver for the PathScale InfiniBand HCAs"
+HOMEPAGE="https://github.com/cornelisnetworks/opa-psm2"
 SRC_URI="https://github.com/cornelisnetworks/${PN}/archive/PSM2_${PV}.tar.gz"
 
+LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"
 KEYWORDS="amd64 ~x86 ~amd64-linux"
 IUSE=""
 
-DEPEND="virtual/pkgconfig"
-RDEPEND="${DEPEND}
-	sys-apps/util-linux
+BDEPEND="virtual/pkgconfig"
+RDEPEND="sys-apps/util-linux
 	sys-process/numactl
 	virtual/udev"
 
