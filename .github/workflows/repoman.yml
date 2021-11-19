@@ -1,0 +1,26 @@
+name: Overlay QA using Repoman
+
+on:
+  push:
+    branches:    
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'scripts/**'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'scripts/**'
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  repoman:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: run repoman
+      uses: lucianposton/repoman-ebuild-qa-action@v1
+
