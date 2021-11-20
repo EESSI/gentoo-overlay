@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>b.e.droge@rug.nl</email>
+		<name>Bob Dröge</name>
+	</maintainer>
+	<longdescription lang="en">
+		A library for detecting, labeling, and reasoning about microarchitectures.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">archspec/archspec</remote-id>
+	</upstream>
+</pkgmetadata>

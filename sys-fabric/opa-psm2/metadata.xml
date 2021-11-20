@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>b.e.droge@rug.nl</email>
+		<name>Bob Dröge</name>
+	</maintainer>
+	<longdescription lang="en">
+		The PSM2 library supports a number of fabric media and stacks, and all of
+		them run on version 7.X of Red Hat Enterprise Linux (abbreviated: RHEL), and
+		SuSE SLES.
+		
+		Only the x86_64 architecture is supported.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">cornelisnetworks/opa-psm2</remote-id>
+	</upstream>
+</pkgmetadata>
