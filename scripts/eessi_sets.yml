@@ -19,7 +19,7 @@ eessi_sets:
       - name: dev-python/pyyaml
       - name: dev-python/rich
       - name: dev-util/patchelf
-      - name: dev-util/pkgconfig
+      - name: dev-util/pkgconf
       - name: media-fonts/dejavu
       - name: media-fonts/liberation-fonts
       - name: sys-apps/archspec
