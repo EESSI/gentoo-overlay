@@ -22,6 +22,9 @@ KEYWORDS="~amd64 ~arm64 ~ppc ~ppc64 ~sparc ~x86 ~x64-macos"
 
 RDEPEND=">dev-python/six-1.13[${PYTHON_USEDEP}]
 	<dev-python/click-8.0[${PYTHON_USEDEP}]"
+BDEPEND="test? (
+	dev-python/jsonschema[${PYTHON_USEDEP}]
+	)"
 
 distutils_enable_tests pytest
 
