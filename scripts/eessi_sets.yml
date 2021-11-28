@@ -33,8 +33,6 @@ eessi_sets:
       - name: sys-cluster/reframe
         version: 3.9.1
         overlay: eessi
-      - name: sys-devel/gcc
-        version: 9.4.0
       - name: sys-fabric/opa-psm2
         version: 11.2.205
         overlay: eessi
