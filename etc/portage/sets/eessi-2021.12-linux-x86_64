@@ -17,3 +17,4 @@ sys-cluster/rdma-core
 =sys-cluster/reframe-3.9.1::eessi
 =sys-fabric/opa-psm2-11.2.205::eessi
 =sys-libs/pam-1.5.2::eessi
+sys-process/numactl
