@@ -13,7 +13,7 @@ HOMEPAGE="https://reframe-hpc.readthedocs.io/
 SRC_URI="https://github.com/eth-cscs/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~ppc64 ~riscv ~x86"
 SLOT="0"
 
 RDEPEND="dev-python/argcomplete[${PYTHON_USEDEP}]
