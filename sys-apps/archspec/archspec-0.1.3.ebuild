@@ -18,10 +18,10 @@ SRC_URI+=" https://github.com/${PN}/${PN}-json/archive/v${PV}.tar.gz -> ${ARCHSP
 
 LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~ppc ~ppc64 ~sparc ~x86 ~x64-macos"
+KEYWORDS="~amd64 ~arm64 ~ppc ~ppc64 ~riscv ~sparc ~x86 ~x64-macos"
 
 RDEPEND=">dev-python/six-1.13[${PYTHON_USEDEP}]
-	<dev-python/click-8.0[${PYTHON_USEDEP}]"
+	=dev-python/click-8.1.3[${PYTHON_USEDEP}]"
 BDEPEND="test? (
 		dev-python/jsonschema[${PYTHON_USEDEP}]
 	)"
