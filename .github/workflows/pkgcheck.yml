@@ -1,8 +1,8 @@
-name: Overlay QA using Repoman
+name: Overlay QA using pkgcheck
 
 on:
   push:
-    branches:    
+    branches:
       - main
     paths-ignore:
       - 'README.md'
@@ -17,10 +17,11 @@ on:
     - cron: "0 6 * * 1"
 
 jobs:
-  repoman:
+  pkgcheck:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: run repoman
-      uses: lucianposton/repoman-ebuild-qa-action@v1
+    - name: Checkout code
+      uses: actions/checkout@master
 
+    - name: Run pkgcheck
+      uses: pkgcore/pkgcheck-action@v1
