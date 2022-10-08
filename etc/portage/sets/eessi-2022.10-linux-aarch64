@@ -15,5 +15,4 @@ sys-apps/dbus
 sys-cluster/lmod
 sys-cluster/rdma-core
 =sys-cluster/reframe-3.9.1::eessi
-=sys-libs/pam-1.5.2::eessi
 sys-process/numactl
