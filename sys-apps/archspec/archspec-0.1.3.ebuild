@@ -3,9 +3,12 @@
 
 EAPI=7
 
+# added: see https://projects.gentoo.org/python/guide/distutils.html#basic-use-pep-517-mode
+DISTUTILS_USE_PEP517=setuptools
+
 PYTHON_COMPAT=( python3_{6..10} )
-DISTUTILS_USE_SETUPTOOLS=pyproject.toml
 inherit distutils-r1
+DISTUTILS_USE_SETUPTOOLS=pyproject.toml
 
 DESCRIPTION="A library to query system architecture"
 HOMEPAGE="https://github.com/archspec/archspec"
