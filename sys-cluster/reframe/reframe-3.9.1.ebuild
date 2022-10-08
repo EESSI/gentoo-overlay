@@ -2,6 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
+
+# added: see https://projects.gentoo.org/python/guide/distutils.html#basic-use-pep-517-mode
+DISTUTILS_USE_PEP517=setuptools
+# EAPI=8
+#
+# PYTHON_COMPAT=( python3_{8..10} pypy3 )
+# inherit distutils-r1
+
+
 PYTHON_COMPAT=( python3_{6..10} )
 
 inherit distutils-r1
@@ -24,11 +33,12 @@ RDEPEND="dev-python/argcomplete[${PYTHON_USEDEP}]
 	dev-python/semver[${PYTHON_USEDEP}]
 	>=sys-apps/archspec-0.1.2"
 BDEPEND="
-	dev-python/pyproject2setuppy[${PYTHON_USEDEP}]
 	test? (
 		>=dev-python/pytest-6.2.3[${PYTHON_USEDEP}]
 		>=dev-python/pytest-forked-1.3.0[${PYTHON_USEDEP}]
 	)"
+# removed
+#	dev-python/pyproject2setuppy[${PYTHON_USEDEP}]
 
 distutils_enable_tests pytest
 
