@@ -4,7 +4,7 @@
 EAPI=7
 
 # added: see https://projects.gentoo.org/python/guide/distutils.html#basic-use-pep-517-mode
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=poetry
 
 PYTHON_COMPAT=( python3_{6..10} )
 inherit distutils-r1
