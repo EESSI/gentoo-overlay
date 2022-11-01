@@ -43,6 +43,7 @@ BDEPEND="${RDEPEND}
 		')
 		app-shells/tcsh
 	)
+	sys-devel/bc
 "
 
 PATCHES=( "${FILESDIR}"/${PN}-8.4.19-no-libsandbox.patch )
@@ -90,13 +91,14 @@ src_configure() {
 		--with-caseIndependentSorting
 		--without-hiddenItalic
 		--with-exportedModuleCmd
-		--with-useDotFiles
 		--without-redirect
 		--with-extendedDefault
 		$(use_with cache cachedLoads)
 		$(use_with duplicate-paths duplicatePaths)
 		$(use_with auto-swap autoSwap)
 	)
+# seems not an option any longer
+#		--with-useDotFiles
 	econf "${myconf[@]}"
 }
 
