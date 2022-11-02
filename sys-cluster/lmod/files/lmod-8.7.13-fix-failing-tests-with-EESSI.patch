@@ -1,0 +1,15 @@
+diff --git a/rt/common_funcs.sh b/rt/common_funcs.sh
+index 7c0a561f..23183aa8 100644
+--- a/rt/common_funcs.sh
++++ b/rt/common_funcs.sh
+@@ -294,7 +294,10 @@ initStdEnvVars()
+ 
+   PATH=/usr/bin:/bin
+   for i in $PATH_to_SHA1 $PATH_to_TM $PATH_to_LUA $PATH_TO_SED $projectDir/proj_mgmt; do
++    echo "before munge PATH '$PATH'"
++    echo "directory to munge '$i'"
+     pathmunge $i 
++    echo "after munge PATH '$PATH'"
+   done
+ }
+ 
