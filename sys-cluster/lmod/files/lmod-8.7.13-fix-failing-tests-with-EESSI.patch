@@ -1,24 +1,23 @@
 diff --git a/rt/common_funcs.sh b/rt/common_funcs.sh
-index 7c0a561f..f476486e 100644
+index 7c0a561f..2c80dd22 100644
 --- a/rt/common_funcs.sh
 +++ b/rt/common_funcs.sh
-@@ -56,6 +56,8 @@ cleanUp ()
+@@ -33,6 +33,7 @@ cleanUp ()
+        -e "s|[\\]27|\\\033|g"                             \
+        -e "s|='\\\\033|='\\\\\\\\033|g"                   \
+        -e "s|\@git\@|$gitV|g"                             \
++       -e "s|$PATH_to_SHA1/sha1sum|PATH_to_HASHSUM|g"     \
+        -e "s|/usr/.*/sha1sum|PATH_to_HASHSUM|g"           \
+        -e "s|/bin/.*/sha1sum|PATH_to_HASHSUM|g"           \
+        -e "s|:$PATH_to_LUA\([:;]\)|\1|g"                  \
+@@ -56,6 +57,10 @@ cleanUp ()
         -e "s|;$PATH_to_SHA1:[0-9];|;|g"                   \
         -e "s| $PATH_to_SHA1||g"                           \
         -e "s|\\\;$PATH_to_SHA1:[0-9]\\\;|\\\;|g"          \
 +       -e "s|:$PATH_TO_SED\([:;]\)|\1|g"                  \
++       -e "s|;$PATH_to_SED:[0-9];|;|g"                    \
++       -e "s| $PATH_to_SED||g"                            \
 +       -e "s|\\\;$PATH_TO_SED:[0-9]\\\;|\\\;|g"           \
         -e "s|^ *Lmod version.*||g"                        \
         -e "s|^LMOD_LD_PRELOAD.*||g"                       \
         -e "s|^LuaFileSystem version.*||g"                 \
-@@ -294,7 +296,10 @@ initStdEnvVars()
- 
-   PATH=/usr/bin:/bin
-   for i in $PATH_to_SHA1 $PATH_to_TM $PATH_to_LUA $PATH_TO_SED $projectDir/proj_mgmt; do
-+    echo "before munge PATH '$PATH'"
-+    echo "directory to munge '$i'"
-     pathmunge $i 
-+    echo "after munge PATH '$PATH'"
-   done
- }
- 
