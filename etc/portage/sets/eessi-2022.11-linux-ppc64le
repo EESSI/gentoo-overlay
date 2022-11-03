@@ -16,3 +16,7 @@ sys-apps/dbus
 sys-cluster/rdma-core
 =sys-cluster/reframe-3.12.0::eessi
 sys-process/numactl
+sys-process/htop
+dev-libs/nss
+app-shells/direnv::guru
+
