@@ -48,9 +48,8 @@ BDEPEND="${RDEPEND}
 
 PATCHES=(
         "${FILESDIR}"/${PN}-8.4.19-no-libsandbox.patch
+        "${FILESDIR}"/${PN}-8.7.13-fix-failing-tests-with-EESSI.patch
 )
-# build without patch first to verify if problem persists in 8.7.14
-#        "${FILESDIR}"/${PN}-8.7.13-fix-failing-tests-with-EESSI.patch
 
 pkg_pretend() {
 	elog "You can control the siteName and syshost settings by"
