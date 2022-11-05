@@ -18,4 +18,3 @@ sys-cluster/rdma-core
 sys-process/numactl
 sys-process/htop
 dev-libs/nss
-app-shells/direnv::guru
