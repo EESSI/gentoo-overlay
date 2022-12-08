@@ -16,12 +16,15 @@ on:
   schedule:
     - cron: "0 6 * * 1"
 
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   pkgcheck:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@master
+      uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # v3.1.0
 
     - name: Run pkgcheck
-      uses: pkgcore/pkgcheck-action@v1
+      uses: pkgcore/pkgcheck-action@5a0413f4494d00e286fb7cf6b8388b6c4578afa4 # No releases, v1 branch
