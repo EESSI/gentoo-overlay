@@ -10,12 +10,15 @@ on:
     paths:
       - scripts/eessi_sets.yml
 
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   yaml_lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # v3.1.0
     - name: yamllint
-      uses: ibiqlik/action-yamllint@v3
+      uses: ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c # v3.1.1
       with:
         file_or_dir: scripts/eessi_sets.yml
