@@ -7,7 +7,7 @@ eessi_archs:
 #  - macos-x86_64
 
 eessi_sets:
-  - name: eessi-2021.12
+  - name: eessi-2023.02
     packages:
       - name: app-editors/emacs
       - name: app-editors/vim
