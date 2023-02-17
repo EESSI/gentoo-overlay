@@ -30,9 +30,6 @@ eessi_sets:
         exclude_on:
           - macos-aarch64
           - macos-x86_64
-      - name: sys-cluster/reframe
-        version: 3.9.1
-        overlay: eessi
       - name: sys-fabric/opa-psm2
         version: 11.2.205
         overlay: eessi
