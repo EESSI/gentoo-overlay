@@ -23,14 +23,14 @@ SLOT="0"
 RDEPEND="dev-python/argcomplete[${PYTHON_USEDEP}]
 	dev-python/jsonschema[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
-	>=dev-python/pyyaml-5.4.1[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/semver[${PYTHON_USEDEP}]
-	>=sys-apps/archspec-0.1.2"
+	>=sys-apps/archspec-0.1.3"
 BDEPEND="
 	test? (
-		>=dev-python/pytest-6.2.3[${PYTHON_USEDEP}]
-		>=dev-python/pytest-forked-1.3.0[${PYTHON_USEDEP}]
+		>=dev-python/pytest-7.0.1[${PYTHON_USEDEP}]
+		>=dev-python/pytest-forked-1.4.0[${PYTHON_USEDEP}]
 	)"
 
 distutils_enable_tests pytest
