@@ -22,10 +22,12 @@ eessi_sets:
       - name: media-fonts/dejavu
       - name: media-fonts/liberation-fonts
       - name: sys-apps/archspec
-        version: 0.1.3
+        version: 0.2.0
         overlay: eessi
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
+        version: 8.7.19
+        overlay: eessi
       - name: sys-cluster/rdma-core
         exclude_on:
           - macos-aarch64
