@@ -18,6 +18,9 @@ eessi_sets:
       - name: dev-python/pycodestyle
       - name: dev-python/pyyaml
       - name: dev-python/rich
+      - name: dev-util/direnv
+        version: 2.32.2
+        overlay: eessi
       - name: dev-util/patchelf
       - name: media-fonts/dejavu
       - name: media-fonts/liberation-fonts
