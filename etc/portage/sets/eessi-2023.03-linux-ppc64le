@@ -7,6 +7,7 @@ dev-python/pip
 dev-python/pycodestyle
 dev-python/pyyaml
 dev-python/rich
+=dev-util/direnv-2.32.2::eessi
 dev-util/patchelf
 media-fonts/dejavu
 media-fonts/liberation-fonts
@@ -14,6 +15,6 @@ media-fonts/liberation-fonts
 sys-apps/dbus
 =sys-cluster/lmod-8.7.19::eessi
 sys-cluster/rdma-core
-=sys-fabric/opa-psm2-11.2.205::eessi
 sys-libs/pam
+sys-process/htop
 sys-process/numactl
