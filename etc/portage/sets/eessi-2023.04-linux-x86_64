@@ -1,5 +1,3 @@
-app-editors/emacs
-app-editors/vim
 app-shells/bash-completion
 dev-python/GitPython
 dev-python/keyring
@@ -17,5 +15,4 @@ sys-cluster/lmod
 sys-cluster/rdma-core
 =sys-fabric/opa-psm2-11.2.205::eessi
 sys-libs/pam
-sys-process/htop
 sys-process/numactl
