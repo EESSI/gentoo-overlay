@@ -7,10 +7,8 @@ eessi_archs:
 #  - macos-x86_64
 
 eessi_sets:
-  - name: eessi-2023.03
+  - name: eessi-2023.04
     packages:
-      - name: app-editors/emacs
-      - name: app-editors/vim
       - name: app-shells/bash-completion
       - name: dev-python/GitPython
       - name: dev-python/keyring
@@ -29,8 +27,6 @@ eessi_sets:
         overlay: eessi
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
-        version: 8.7.19
-        overlay: eessi
       - name: sys-cluster/rdma-core
         exclude_on:
           - macos-aarch64
@@ -44,5 +40,4 @@ eessi_sets:
         exclude_on:
           - macos-aarch64
           - macos-x86_64
-      - name: sys-process/htop
       - name: sys-process/numactl
