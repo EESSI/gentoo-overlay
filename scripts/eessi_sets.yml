@@ -7,7 +7,7 @@ eessi_archs:
 #  - macos-x86_64
 
 eessi_sets:
-  - name: eessi-2023.04
+  - name: eessi-2023.06
     packages:
       - name: app-shells/bash-completion
       - name: dev-python/GitPython
@@ -23,7 +23,7 @@ eessi_sets:
       - name: media-fonts/dejavu
       - name: media-fonts/liberation-fonts
       - name: sys-apps/archspec
-        version: 0.2.0
+        version: 0.2.1
         overlay: eessi
       - name: sys-apps/dbus
       - name: sys-cluster/lmod
