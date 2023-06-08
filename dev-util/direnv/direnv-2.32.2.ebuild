@@ -7,7 +7,7 @@ inherit go-module
 
 DESCRIPTION="Direnv is an environment switcher for the shell."
 HOMEPAGE="http://direnv.net"
-SRC_URI="https://github.com/${PN}/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://eessi-gentoo-snapshot.s3.eu-west-1.amazonaws.com/direnv-2.32.2-vendor.tar.xz"
 
 LICENSE="MIT"
