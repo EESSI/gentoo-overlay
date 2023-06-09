@@ -28,3 +28,5 @@ jobs:
 
     - name: Run pkgcheck
       uses: pkgcore/pkgcheck-action@5a0413f4494d00e286fb7cf6b8388b6c4578afa4 # No releases, v1 branch
+      with:
+        args: 'dev-util sys-apps sys-cluster sys-fabric'
