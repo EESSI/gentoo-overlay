@@ -16,6 +16,9 @@ eessi_sets:
       - name: dev-python/pycodestyle
       - name: dev-python/pyyaml
       - name: dev-python/rich
+      - name: dev-python/uri_template
+        version: 1.2.0-r1
+        overlay: eessi
       - name: dev-util/direnv
         version: 2.32.2
         overlay: eessi
