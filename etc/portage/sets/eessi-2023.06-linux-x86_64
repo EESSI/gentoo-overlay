@@ -5,7 +5,7 @@ dev-python/pip
 dev-python/pycodestyle
 dev-python/pyyaml
 dev-python/rich
-=dev-python/uri_template-1.2.0-r1::eessi
+=dev-python/uri-template-1.2.0-r1::eessi
 =dev-util/direnv-2.32.2::eessi
 dev-util/patchelf
 media-fonts/dejavu
