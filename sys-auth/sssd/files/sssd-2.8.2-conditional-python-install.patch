@@ -1,0 +1,22 @@
+--- sssd-2.8.2/src/tools/analyzer/Makefile.am~	2023-03-06 12:21:54.915277376 +0000
++++ sssd-2.8.2/src/tools/analyzer/Makefile.am	2023-03-06 12:23:27.211073169 +0000
+@@ -5,7 +5,9 @@
+     $(NULL)
+ 
+ pkgpythondir = $(python3dir)/sssd
++modulesdir = $(pkgpythondir)/modules
+ 
++if BUILD_PYTHON_BINDINGS
+ dist_pkgpython_DATA = \
+     __init__.py \
+     source_files.py \
+@@ -15,8 +17,8 @@
+     sss_analyze.py \
+     $(NULL)
+ 
+-modulesdir = $(pkgpythondir)/modules
+ dist_modules_DATA = \
+     modules/__init__.py \
+     modules/request.py \
+     $(NULL)
++endif
