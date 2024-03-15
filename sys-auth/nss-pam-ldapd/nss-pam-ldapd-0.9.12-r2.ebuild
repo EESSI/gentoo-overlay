@@ -12,7 +12,7 @@ SRC_URI="https://arthurdejong.org/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 x86"
+KEYWORDS="amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~riscv x86"
 IUSE="debug kerberos +nslcd pam pynslcd sasl test +utils"
 REQUIRED_USE="
 	utils? ( ${PYTHON_REQUIRED_USE} )
