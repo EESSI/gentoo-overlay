@@ -2,7 +2,7 @@
 eessi_archs:
   - linux-aarch64
   - linux-x86_64
-#  - linux-ppc64le
+  - linux-riscv64
 #  - macos-aarch64
 #  - macos-x86_64
 

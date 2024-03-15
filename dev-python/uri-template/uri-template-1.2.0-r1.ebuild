@@ -11,11 +11,11 @@ inherit distutils-r1
 MY_P="${PN}-v${PV}"
 DESCRIPTION="URI Template expansion in strict adherence to RFC 6570"
 HOMEPAGE="
-	https://gitlab.linss.com/open-source/uri_template/
+	https://gitlab.linss.com/open-source/python/uri-template
 	https://pypi.org/project/uri-template/
 "
 SRC_URI="
-	https://gitlab.linss.com/open-source/${PN}/-/archive/v${PV}/${MY_P}.tar.gz
+	https://gitlab.linss.com/open-source/python/${PN}/-/archive/v${PV}/${MY_P}.tar.gz
 "
 S="${WORKDIR}/${MY_P}"
 
