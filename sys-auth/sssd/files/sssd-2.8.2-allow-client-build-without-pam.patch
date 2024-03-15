@@ -1,0 +1,102 @@
+--- sssd-2.6.0-abi_x86_64.amd64/src/external/pam.m4.orig	2022-09-18 00:52:08.238444801 +0000
++++ sssd-2.6.0-abi_x86_64.amd64/src/external/pam.m4	2022-09-18 00:53:04.881787599 +0000
+@@ -4,8 +4,8 @@
+ AC_CHECK_HEADERS([security/pam_appl.h security/pam_modules.h],
+     [AC_CHECK_LIB([pam], [pam_get_item],
+         [PAM_LIBS="-lpam"],
+-        [AC_MSG_ERROR([PAM must support pam_get_item])])],
+-    [AC_MSG_ERROR([PAM development libraries not installed])]
++        [AC_MSG_WARN([PAM must support pam_get_item])])],
++    [AC_MSG_WARN([PAM development libraries not installed])]
+ )
+ 
+ AC_CHECK_HEADERS([security/pam_ext.h security/pam_modutil.h])
+--- sssd-2.6.0-abi_x86_64.amd64/src/sss_client/common.c~	2021-10-14 09:43:05.000000000 +0000
++++ sssd-2.6.0-abi_x86_64.amd64/src/sss_client/common.c	2022-09-18 01:48:56.133414237 +0000
+@@ -25,7 +25,9 @@
+ #include "config.h"
+ 
+ #include <nss.h>
++#ifdef HAVE_SECURITY_PAM_MODULES_H
+ #include <security/pam_modules.h>
++#endif
+ #include <errno.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+@@ -889,6 +891,7 @@
+     return 0;
+ }
+ 
++#ifdef HAVE_SECURITY_PAM_MODULES_H
+ int sss_pam_make_request(enum sss_cli_command cmd,
+                       struct sss_cli_req_data *rd,
+                       uint8_t **repbuf, size_t *replen,
+@@ -1007,6 +1010,7 @@
+ 
+     sss_pam_unlock();
+ }
++#endif
+ 
+ enum sss_status
+ sss_cli_make_request_with_checks(enum sss_cli_command cmd,
+--- sssd-2.6.0-abi_x86_64.amd64/src/krb5_plugin/sssd_krb5_locator_plugin.c~	2021-10-14 09:43:05.000000000 +0000
++++ sssd-2.6.0-abi_x86_64.amd64/src/krb5_plugin/sssd_krb5_locator_plugin.c	2022-09-21 17:34:54.316190404 +0000
+@@ -36,7 +36,7 @@
+ #include "util/sss_krb5.h"
+ #include <krb5/locate_plugin.h>
+ 
+-#include "providers/krb5/krb5_common.h"
++#define TEST_PUBCONF_PATH PUBCONF_PATH
+ 
+ /* The following override of KDCINFO_TMPL and KPASSWDINFO_TMPL is not very
+  * elegant but since they are defined in krb5_common.h with the help of
+--- sssd-2.6.0-abi_x86_64.amd64/src/krb5_plugin/sssd_krb5_locator_plugin.c~	2022-09-21 18:06:21.523271693 +0000
++++ sssd-2.6.0-abi_x86_64.amd64/src/krb5_plugin/sssd_krb5_locator_plugin.c	2022-09-21 18:22:35.490987485 +0000
+@@ -33,7 +33,8 @@
+ #include <fcntl.h>
+ #include <ctype.h>
+ 
+-#include "util/sss_krb5.h"
++#include "util/atomic_io.h"
++#include "util/util_errors.h"
+ #include <krb5/locate_plugin.h>
+ 
+ #define TEST_PUBCONF_PATH PUBCONF_PATH
+--- sssd-2.6.0-abi_x86_64.amd64/src/sss_client/pam_sss.c~	2022-09-22 01:17:22.036623356 +0000
++++ sssd-2.6.0-abi_x86_64.amd64/src/sss_client/pam_sss.c	2022-09-22 01:23:20.654380535 +0000
+@@ -47,6 +47,7 @@
+ #include "sss_cli.h"
+ #include "pam_message.h"
+ #include "util/atomic_io.h"
++#define PAM_SSS 1
+ #include "util/authtok-utils.h"
+ #include "util/dlinklist.h"
+ 
+--- sssd-2.6.0-abi_x86_64.amd64/src/util/authtok-utils.h~	2022-09-22 01:19:10.196756533 +0000
++++ sssd-2.6.0-abi_x86_64.amd64/src/util/authtok-utils.h	2022-09-22 01:25:28.495719906 +0000
+@@ -20,7 +20,9 @@
+ #ifndef __AUTHTOK_UTILS_H__
+ #define __AUTHTOK_UTILS_H__
+ 
++#ifndef PAM_SSS
+ #include <talloc.h>
++#endif
+ 
+ #include "sss_client/sss_cli.h"
+ 
+@@ -83,6 +85,7 @@
+                                uint8_t *buf, size_t buf_len,
+                                size_t *_2fa_blob_len);
+ 
++#ifndef PAM_SSS
+ /**
+  * @brief Extract 2FA data from memory buffer
+  *
+@@ -132,6 +135,7 @@
+                                  char **module_name, size_t *_module_name_len,
+                                  char **key_id, size_t *_key_id_len,
+                                  char **label, size_t *_label_len);
++#endif /* PAM_SSS */
+ 
+ /**
+  * @brief Return a pointer to the PIN string in the memory buffer

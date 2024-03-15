@@ -29,6 +29,12 @@ eessi_sets:
         version: 0.2.1
         overlay: eessi
       - name: sys-apps/dbus
+      - name: sys-auth/nss-pam-ldapd
+        version: 0.9.12-r2
+        overlay: eessi
+      - name: sys-auth/sssd
+        version: 2.8.2
+        overlay: eessi
       - name: sys-cluster/lmod
       - name: sys-cluster/rdma-core
         exclude_on:
