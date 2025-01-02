@@ -55,6 +55,7 @@ eessi_sets:
       - name: app-shells/bash-completion
       - name: dev-python/gitpython
       - name: dev-python/keyring
+      - name: dev-python/pip
       - name: dev-python/pycodestyle
       - name: dev-python/pyyaml
       - name: dev-python/rich
