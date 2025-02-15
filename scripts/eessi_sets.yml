@@ -50,7 +50,7 @@ eessi_sets:
           - macos-aarch64
           - macos-x86_64
       - name: sys-process/numactl
-  - name: eessi-2025.01
+  - name: eessi-2025.02
     packages:
       - name: app-shells/bash-completion
       - name: dev-python/gitpython
@@ -70,10 +70,10 @@ eessi_sets:
         overlay: eessi
       - name: sys-apps/dbus
       - name: sys-auth/nss-pam-ldapd
-        version: 0.9.12-r4
+        version: 0.9.13
         overlay: eessi
       - name: sys-auth/sssd
-        version: 2.9.6
+        version: 2.10.1
         overlay: eessi
       - name: sys-cluster/lmod
       - name: sys-cluster/rdma-core
