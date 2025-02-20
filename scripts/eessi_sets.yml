@@ -52,6 +52,9 @@ eessi_sets:
       - name: sys-process/numactl
   - name: eessi-2025.02
     packages:
+      - name: app-misc/elfx86exts
+        version: 0.6.2
+        overlay: eessi
       - name: app-shells/bash-completion
       - name: dev-python/gitpython
       - name: dev-python/keyring
