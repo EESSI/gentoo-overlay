@@ -1,3 +1,4 @@
+=app-misc/elfx86exts-0.6.2::eessi
 app-shells/bash-completion
 dev-python/gitpython
 dev-python/keyring
