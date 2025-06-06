@@ -56,8 +56,6 @@ eessi_sets:
         version: 0.6.2
         overlay: eessi
       - name: app-shells/bash-completion
-      - name: dev-python/gitpython
-      - name: dev-python/keyring
       - name: dev-python/pip
       - name: dev-python/pycodestyle
       - name: dev-python/pyyaml
