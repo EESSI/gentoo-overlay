@@ -63,7 +63,7 @@ eessi_sets:
       - name: dev-python/pyyaml
       - name: dev-python/rich
       - name: dev-util/direnv
-        version: 2.35.0
+        version: 2.36.0
         overlay: eessi
       - name: dev-util/patchelf
       - name: media-fonts/dejavu
@@ -76,7 +76,7 @@ eessi_sets:
         version: 0.9.13
         overlay: eessi
       - name: sys-auth/sssd
-        version: 2.10.1
+        version: 2.11.0
         overlay: eessi
       - name: sys-cluster/lmod
       - name: sys-cluster/rdma-core
