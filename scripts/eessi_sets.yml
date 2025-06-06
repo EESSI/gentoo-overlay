@@ -73,6 +73,9 @@ eessi_sets:
       - name: sys-auth/nss-pam-ldapd
         version: 0.9.13
         overlay: eessi
+      - name: sys-auth/munge
+        version: 0.5.16
+        overlay: eessi
       - name: sys-auth/sssd
         version: 2.11.0
         overlay: eessi
