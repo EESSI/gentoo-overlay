@@ -70,7 +70,9 @@ eessi_sets:
         version: 0.2.5
         overlay: eessi
       - name: sys-apps/dbus
-      - name: sys-libs/pam # needs to be installed before sys-auth packages!
+      # needs to be installed before sys-auth packages!
+      # see https://github.com/EESSI/compatibility-layer/issues/220
+      - name: sys-libs/pam
         exclude_on:
           - macos-aarch64
           - macos-x86_64
