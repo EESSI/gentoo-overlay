@@ -70,6 +70,10 @@ eessi_sets:
         version: 0.2.5
         overlay: eessi
       - name: sys-apps/dbus
+      - name: sys-libs/pam
+        exclude_on:
+          - macos-aarch64
+          - macos-x86_64
       - name: sys-auth/nss-pam-ldapd
         version: 0.9.13
         overlay: eessi
@@ -89,8 +93,4 @@ eessi_sets:
         overlay: eessi
         include_on:
           - linux-x86_64
-      - name: sys-libs/pam
-        exclude_on:
-          - macos-aarch64
-          - macos-x86_64
       - name: sys-process/numactl
