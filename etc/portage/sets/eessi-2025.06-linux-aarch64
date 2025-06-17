@@ -10,10 +10,10 @@ media-fonts/dejavu
 media-fonts/liberation-fonts
 =sys-apps/archspec-0.2.5::eessi
 sys-apps/dbus
+sys-libs/pam
 =sys-auth/nss-pam-ldapd-0.9.13::eessi
 =sys-auth/munge-0.5.16::eessi
 =sys-auth/sssd-2.11.0::eessi
 sys-cluster/lmod
 sys-cluster/rdma-core
-sys-libs/pam
 sys-process/numactl
