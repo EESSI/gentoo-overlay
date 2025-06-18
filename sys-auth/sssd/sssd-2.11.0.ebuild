@@ -343,7 +343,8 @@ multilib_src_compile() {
 		use doc && emake docs
 	else
 		emake libnss_sss.la
-		use pam && emake pam_sss.la pam_sss_gss.la
+		use pam && emake pam_sss.la
+		use pam && use kerberos && emake pam_sss_gss.la
 		if use kerberos || use daemon; then
 			emake sssd_krb5_locator_plugin.la
 		fi
@@ -368,7 +369,7 @@ multilib_src_install() {
 	else
 		# easier than playing with automake...
 		use pam && dopammod .libs/pam_sss.so
-		use pam && dopammod .libs/pam_sss_gss.so
+		use pam && use kerberos && dopammod .libs/pam_sss_gss.so
 
 		into /
 		dolib.so .libs/libnss_sss.so*
