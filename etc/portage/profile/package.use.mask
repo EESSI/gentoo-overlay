@@ -1,0 +1,3 @@
+# unmask the pam USE flag for nss-pam-ldapd and sssd
+sys-auth/nss-pam-ldapd -pam
+sys-auth/sssd -pam
