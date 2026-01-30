@@ -52,6 +52,9 @@ eessi_sets:
       - name: sys-process/numactl
   - name: eessi-2025.06
     packages:
+      - name: app-arch/xz-utils
+        version: 5.8.2
+        overlay: eessi
       - name: app-misc/elfx86exts
         version: 0.6.2
         overlay: eessi
