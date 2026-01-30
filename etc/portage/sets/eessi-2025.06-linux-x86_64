@@ -1,3 +1,4 @@
+=app-arch/xz-utils-5.8.2::eessi
 =app-misc/elfx86exts-0.6.2::eessi
 app-shells/bash-completion
 dev-python/pip
