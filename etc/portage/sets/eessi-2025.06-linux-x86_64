@@ -14,6 +14,7 @@ sys-apps/dbus
 =sys-auth/munge-0.5.16::eessi
 =sys-auth/sssd-2.11.0::eessi
 sys-cluster/lmod
+=sys-cluster/modules-5.6.1::eessi
 sys-cluster/rdma-core
 =sys-fabric/opa-psm2-12.0.1::eessi
 sys-libs/pam

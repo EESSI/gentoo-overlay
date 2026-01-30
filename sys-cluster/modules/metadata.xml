@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>xavier.delaruelle@gmail.com</email>
+        <name>Xavier Delaruelle</name>
+    </maintainer>
+    <maintainer type="project">
+        <email>sci@gentoo.org</email>
+        <name>Gentoo Science Project</name>
+    </maintainer>
+    <longdescription lang="en">
+        The Environment Modules package provides for an easy dynamic
+        modification of a user's environment via modulefiles. Which
+        typically instruct the module command to alter or set shell
+        environment variables (such as PATH, MANPATH, etc), aliases,
+        functions as well as command-line completions over a variety
+        of shells.
+    </longdescription>
+    <upstream>
+        <remote-id type="github">envmodules/modules</remote-id>
+        <bugs-to>https://github.com/envmodules/modules/issues</bugs-to>
+        <changelog>https://modules.readthedocs.io/en/stable/NEWS.html</changelog>
+        <doc>https://modules.readthedocs.io</doc>
+    </upstream>
+    <use>
+        <flag name="new-features">enable all new features</flag>
+        <flag name="shell-setup">install shell initialization and completion files</flag>
+        <flag name="man-install">install man files in global location</flag>
+    </use>
+</pkgmetadata>
