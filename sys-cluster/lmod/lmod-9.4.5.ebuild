@@ -1,7 +1,7 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 LUA_COMPAT=( lua5-{1..3} )
 inherit autotools lua-single prefix
@@ -33,22 +33,19 @@ RDEPEND="${LUA_DEPS}
 		dev-lua/luaposix[${LUA_USEDEP}]
 		dev-lua/lua-term[${LUA_USEDEP}]
 	')
-	virtual/pkgconfig
 "
-DEPEND="${RDEPEND}"
 BDEPEND="${RDEPEND}
+	app-alternatives/bc
 	test? (
-		$(lua_gen_cond_dep '
-			dev-util/hermes[${LUA_SINGLE_USEDEP}]
-		')
+		>=dev-util/hermes-3.1[${LUA_SINGLE_USEDEP}]
 		app-shells/tcsh
 	)
-	sys-devel/bc
+	virtual/pkgconfig
 "
 
 PATCHES=(
-        "${FILESDIR}"/${PN}-8.4.19-no-libsandbox.patch
-        "${FILESDIR}"/${PN}-8.7.13-fix-failing-tests-with-EESSI.patch
+	"${FILESDIR}"/${PN}-8.4.19-no-libsandbox.patch
+	"${FILESDIR}"/${PN}-8.7.55-make.patch
 )
 
 pkg_pretend() {
@@ -63,10 +60,23 @@ pkg_pretend() {
 
 src_prepare() {
 	default
-	rm -r pkgs/{luafilesystem,term} || die
-	rm -r rt/{ck_mtree_syntax,colorize,end2end,help,ifur,settarg} || die
+	rm -r rt/end2end || die # should run in a git repository
 	hprefixify -w '/#\!\/bin\/tcsh/' rt/csh_swap/csh_swap.tdesc || die
 	eautoreconf
+	sed -i \
+		-e "1s|#!/usr/bin/env lua|#!${LUA}|" \
+		proj_mgmt/joinBase64Results \
+		proj_mgmt/clean_gold_files/regularize \
+		|| die
+	sed -i \
+		-e "s|    lua|    ${LUA}|" \
+		rt/csh_swap/csh_swap.tdesc \
+		|| die
+	sed -i \
+		-e "/prepend_path/d" \
+		rt/changeMPATH/mf/Core/admin/admin-1.0.lua \
+		rt/changeMPATH/mf/Core2/admin/admin-1.0.lua \
+		|| die
 }
 
 src_configure() {
@@ -100,8 +110,6 @@ src_configure() {
 		$(use_with duplicate-paths duplicatePaths)
 		$(use_with auto-swap autoSwap)
 	)
-# seems not an option any longer
-#		--with-useDotFiles
 	econf "${myconf[@]}"
 }
 
@@ -111,12 +119,18 @@ src_compile() {
 }
 
 src_test() {
+	# With current version test pass only when we eselect
+	# the 5.1 version of lua
 	local -x PATH="${EPREFIX}/opt/hermes/bin:${PATH}"
 	tm -vvv || die
 	testcleanup || die
 }
 
 src_install() {
+	dosym -r /usr/share/Lmod/init/profile /etc/bash/bashrc.d/z00_lmod.sh
+	dosym -r /usr/share/Lmod/init/profile /etc/profile.d/z00_lmod.sh
+	dosym -r /usr/share/Lmod/init/cshrc /etc/profile.d/z00_lmod.csh
+	dosym -r /usr/share/Lmod/init/profile.fish /etc/fish/conf.d/z00_lmod.fish
 	default
 	newman "${FILESDIR}"/module.1-8.4.20 module.1
 	# not a real man page
